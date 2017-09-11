@@ -1,5 +1,8 @@
 <html>
 <head>
+<!--author: Abhishek Raj-->
+<!--Be advised: This is intellectual property of Abhishek Raj and do not forget giving credits to him in any possible manner-->
+<!--Github: Abhishek49-->
 <link rel="stylesheet" href="css/materialize.css" />
  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      
@@ -183,7 +186,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 	display: block;
 	white-space: nowrap;
 }
-.slideCol p { margin: 0px !important; }
+.slideCol span { margin: 0px !important;display:inline-block; width:747px;}
 
 .scroller {
    height: 70pt;
@@ -192,19 +195,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 }
 .scroller .inner { animation: 5s normal infinite running scroll; }
 @keyframes scroll {
-   0%  	{margin-top: 0px;}
-   15% 	{margin-top: 0px;}
+   0%  	{margin-left: 0px;}
+   15% 	{margin-left: 0px;}
 
-   25%  {margin-top: -70pt;}
-   40%  {margin-top: -70pt;}
+   25%  {margin-left: -747px;}
+   40%  {margin-left: -747px;}
    
-   50%  {margin-top: -140pt;}
-   65%  {margin-top: -140pt;}
+   50%  {margin-left: -1494px;}
+   65%  {margin-left: -1494px;}
 
-   75%  {margin-top: -210pt;}
-   90%  {margin-top: -210pt;}
+   75%  {margin-left: -2241px;}
+   90%  {margin-left: -2241px;}
 
-   100% {margin-top: 0px;}
+   100% {margin-left: 0px;}
 }
 
 
@@ -525,10 +528,7 @@ footer #footer {
 					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 slideCol">
 						<div class="scroller">
 							<div class="inner">
-								<p>LOTSOFSTUFF</p>
-								<p>AMAZING</p>
-								<p>LOREMIPSUM</p>
-								<p>WORKSOHARD</p>
+								<span>LOTSOFSTUFF</span><span>AMAZING</span><span>LOREMIPSUM</span><span>WORKSOHARD</span>
 							</div>
 						</div>
 					</div>
@@ -608,8 +608,11 @@ footer #footer {
 				</div>
 			</section>
 		
+		<div>
+		</div>
       </div><!--/.row -->
-    </div><!--/.container -->
+    <div style="position:fixed;top:40%;right:0px;background-color:white;display:none;" id ="leftfixed">SERVICES </div>
+	</div><!--/.container -->
 <footer>
 		
 		<div id="footer">
@@ -631,6 +634,15 @@ footer #footer {
 var navbarHeight = $('.navbar').height(); 
 
 $(window).scroll(function() {
+
+	if($(window).scrollTop() >= 800 && $(window).scrollTop()<=1200)
+	{
+		$('#leftfixed').slideDown();
+	}
+	else
+		$('#leftfixed').hide();
+
+
   var navbarColor = "62,195,246";//color attr for rgba
   var smallLogoHeight = $('.small-logo').height();
   var bigLogoHeight = $('.big-logo').height();
